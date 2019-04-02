@@ -1,2 +1,2 @@
-# Evalution Code of Face Recognition and Authentication with online registration
+# Evalution Code of Face Recognition and Authentication with Online Registration
 #  Coming Soon ...
