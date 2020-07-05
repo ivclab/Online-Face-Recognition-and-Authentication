@@ -1,3 +1,4 @@
 *.pyc
 *.pptx
 .DS_Store
+*.tar.gz
