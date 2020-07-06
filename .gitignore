@@ -2,3 +2,6 @@
 *.pptx
 .DS_Store
 *.tar.gz
+env/*
+result/*
+__pycache__/*

@@ -51,7 +51,7 @@ def simulator(args, emb_array, labels, max_compare_num, filepath):
     return result_file
 
 def main(args):
-    filepaths = [args.csv_dir + v for v in os.listdir(args.csv_dir) if 'features' in v]
+    filepaths = [os.path.join(args.csv_dir, v) for v in os.listdir(args.csv_dir) if 'features' in v]
     for csv_filepath in filepaths:
         util.green_print(csv_filepath)
         filepath = util.create_output_path(csv_filepath)
@@ -60,11 +60,11 @@ def main(args):
         emb_array, labels = util.readEmb_csv(csv_filepath)
 
         # Main
-        start = 0
-        step = 100
-        total_num = len(labels) + step
-        #for i in range(start, total_num, step):
-        result_file = simulator(args, emb_array, labels, -1, filepath)
+        total_num = len(labels)
+        if args.max_compare_num < 1:
+            result_file = simulator(args, emb_array, labels, total_num, filepath)
+        else:
+            result_file = simulator(args, emb_array, labels, args.max_compare_num, filepath)
 
     # Plot
     #util.plot(result_file, start)
@@ -72,6 +72,8 @@ def main(args):
 def parse_arguments(argv):
     parser = argparse.ArgumentParser()
     parser.add_argument('csv_dir', type=str, help='the csv filepath with features')
+    parser.add_argument('--max_compare_num', type=int, default=100,
+        help='the max number of comparison within the database')
     return parser.parse_args(argv)
 
 if __name__ == '__main__':
