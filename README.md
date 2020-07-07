@@ -19,9 +19,9 @@ $ pip install -r requirement.txt
 #### - Use FaceNet (reproduce result in paper)
 We used [FaceNet](https://github.com/davidsandberg/facenet) model version [20170512-110547](https://drive.google.com/file/d/0B5MzpY9kBtDVZ2RpVDYwWmxoSUk/edit) to generate embedding of color_FERET, LFW and Adience in our experiments. You can find the embeddings under the data repository. We shuffle each dataset for 10 times so that the register orders are different. Then we compute the average accuracy from these 10 experiments.
 
-1. Download [FaceNet model 20170512-110547](https://drive.google.com/file/d/0B5MzpY9kBtDVZ2RpVDYwWmxoSUk/edit)
+1. Download [FaceNet model 20170512-110547](https://drive.google.com/file/d/0B5MzpY9kBtDVZ2RpVDYwWmxoSUk/edit), unzip, and put in the same directory.
 2. ```$ python dump_embeddings.py --model 20170512-110547/ [data_dir]```
-Please follow the [instruction](https://github.com/davidsandberg/facenet/wiki/Train-a-classifier-on-own-images) to set up your dataset repository.
+Please follow the [instruction](https://github.com/davidsandberg/facenet/wiki/Train-a-classifier-on-own-images) to set up your dataset directory.
 
 
 #### - Use your own deep learning model
@@ -33,7 +33,7 @@ Please follow the [instruction](https://github.com/davidsandberg/facenet/wiki/Tr
 
 ### 2. Run simulation and evaluation with adaptive threshold (with color_FERET)
 - Run simulation:
-If ```max_compare_num``` is less than 1, the program will compare the registering embedding with all the embeddings sotred in the simulated database. (It will take a lot of time)
+If ```max_compare_num``` is less than 1, the program will compare the registering embedding with all the embeddings sotred in the simulated database, which is the experiments conducted in our paper. (It will take a lot of time)
 ```bash
 $ python simulator_v4_adaptive_thd.py data/color_FERET --max_compare_num 100
 ```
