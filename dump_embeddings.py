@@ -13,7 +13,7 @@ import math
 import csv
 from datetime import datetime
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import random
 
 import facenet_simple
@@ -34,7 +34,6 @@ def my_get_paths(data_dir, ext):
                 file_path = os.path.join(class_folder, pp)
                 if os.path.exists(file_path) and pp.endswith(ext):
                     path_list.append(file_path)
-
     green_print('Get %d path' % len(path_list))
     return path_list
 
@@ -98,9 +97,6 @@ def write_to_csv(filename, emb_paths, emb_array, exp_time, register_order_file=N
         with open(register_order_file, 'r') as textfile:
             register_order = textfile.read().split('\n')
 
-    # Write to csv
-    if filename is None:
-        filename = datetime.strftime(datetime.now(), '%Y%m%d_%H%M%S')
     filename = 'data/features_' + filename + '_v' + exp_time + '.csv'
     with open(filename, "w") as csv_file:
         csv_writer = csv.writer(csv_file)
@@ -148,9 +144,14 @@ def main(args):
                 feed_dict = {images_placeholder:images, phase_train_placeholder:False}
                 emb_array[start_index:end_index, :] = sess.run(embeddings, feed_dict=feed_dict)
 
-            # Write to file
+    	    # Write to csv
+            filename = args.csv_filename
+            if args.csv_filename is None:
+                filename = datetime.strftime(datetime.now(), '%Y%m%d_%H%M%S')
+            
+	    # Write to file
             for i in range(10):
-                write_to_csv(args.csv_filename, data_paths, emb_array, str(i), args.register_order_file)
+                write_to_csv(filename, data_paths, emb_array, str(i), args.register_order_file)
 
     green_print('END')
 

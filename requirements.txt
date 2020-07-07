@@ -1,5 +1,4 @@
 cycler==0.10.0
-kiwisolver==1.2.0
 matplotlib==3.2.2
 numpy==1.19.0
 pyparsing==2.4.7
