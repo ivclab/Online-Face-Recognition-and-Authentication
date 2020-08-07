@@ -10,7 +10,7 @@ Many face recognition systems boost the performance using deep learning models, 
 
 ## Prerequisition
 ```bash
-$ pip install -r requirement.txt
+$ pip install -r requirements.txt
 ```
 
 ## Usage
