@@ -3,7 +3,12 @@ Official implementation of [Data-specific Adaptive Threshold for Face Recognitio
 
 Created by [Hsin-Rung Chou](https://github.com/Sherry40931), [Jia-Hong Lee](https://github.com/Jia-HongHenryLee), [Yi-Ming Chan](https://github.com/yimingchan), Chu-Song Chen.
 
-The code is released for academic research use only. For commercial use, please contact [Dr. Chu-Song Chen](https://www.iis.sinica.edu.tw/pages/song/)(song@iis.sinica.edu.tw).
+The code is released for academic research use only. For commercial use, please contact Prof. Chu-Song Chen(chusong@csie.ntu.edu.tw).
+
+## Benchmarks
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/data-specific-adaptive-threshold-for-face/face-recognition-on-adience-online-open-set)](https://paperswithcode.com/sota/face-recognition-on-adience-online-open-set?p=data-specific-adaptive-threshold-for-face)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/data-specific-adaptive-threshold-for-face/face-recognition-on-color-feret-online-open)](https://paperswithcode.com/sota/face-recognition-on-color-feret-online-open?p=data-specific-adaptive-threshold-for-face)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/data-specific-adaptive-threshold-for-face/face-recognition-on-lfw-online-open-set)](https://paperswithcode.com/sota/face-recognition-on-lfw-online-open-set?p=data-specific-adaptive-threshold-for-face)
 
 ## Introduction
 Many face recognition systems boost the performance using deep learning models, but only a few researches go into the mechanisms for dealing with online registration. Although we can obtain discriminative facial features through the state-of-the-art deep model training, how to decide the best threshold for practical use remains a challenge. We develop a technique of adaptive threshold mechanism to improve the recognition accuracy. We also design a face recognition system along with the registering procedure to handle online registration. Furthermore, we introduce a new evaluation protocol to better evaluate the performance of an algorithm for real-world scenarios. Under our proposed protocol, our method can achieve a 22\% accuracy improvement on the LFW dataset.
@@ -53,11 +58,6 @@ $ python get_avg_accuracy.py result/Simulator_v4_features_color_FERET_v
 <!-- <img align="center" src="https://i.imgur.com/GLOBBam.png"> -->
 ![](https://i.imgur.com/GLOBBam.png)
 
-## Benchmarks
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/data-specific-adaptive-threshold-for-face/face-recognition-on-adience-online-open-set)](https://paperswithcode.com/sota/face-recognition-on-adience-online-open-set?p=data-specific-adaptive-threshold-for-face)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/data-specific-adaptive-threshold-for-face/face-recognition-on-color-feret-online-open)](https://paperswithcode.com/sota/face-recognition-on-color-feret-online-open?p=data-specific-adaptive-threshold-for-face)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/data-specific-adaptive-threshold-for-face/face-recognition-on-lfw-online-open-set)](https://paperswithcode.com/sota/face-recognition-on-lfw-online-open-set?p=data-specific-adaptive-threshold-for-face)
-
 ## Reference Resource
 - [FaceNet](https://github.com/davidsandberg/facenet)
 - [color FERET](https://www.nist.gov/itl/products-and-services/color-feret-database)
@@ -77,4 +77,4 @@ Please cite following paper if these codes help your research:
     }
 
 ## Contact
-Please feel free to leave suggestions or comments to [Hsin-Rung Chou](https://github.com/Sherry40931), [Jia-Hong Lee](https://github.com/Jia-HongHenryLee), [Yi-Ming Chan](https://github.com/yimingchan), [Chu-Song Chen](https://www.iis.sinica.edu.tw/pages/song/)(song@iis.sinica.edu.tw)
+Please feel free to leave suggestions or comments to [Hsin-Rung Chou](https://github.com/Sherry40931), [Jia-Hong Lee](https://github.com/Jia-HongHenryLee), [Yi-Ming Chan](https://github.com/yimingchan), Chu-Song Chen(chusong@csie.ntu.edu.tw)
